@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
-
-import Singleton.Singleton;
+package Singleton;
 
 /**
  *
  * @author noura
  */
-public class XOEngine extends Singleton {
+public class Singleton {
     
 }
