@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Controllers.XOEngine;
 import Strategy.*;
 
 /**
@@ -12,11 +13,14 @@ import Strategy.*;
  * @author noura
  */
 public class Menu extends javax.swing.JFrame {
+    
+    XOEngine engine;
 
     /**
      * Creates new form Menu
      */
     public Menu() {
+        engine = XOEngine.getInstance();
         initComponents();
     }
 
@@ -127,7 +131,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         GameStrategy Strategy= new Defensive();
-        
+        engine.setStrategy(Strategy);
         GameTable table = new GameTable();
         table.show();
         this.hide();
@@ -136,7 +140,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         GameStrategy Strategy= new Smart();
-        
+        engine.setStrategy(Strategy);
         GameTable table = new GameTable();
         table.show();
         this.hide();
@@ -144,7 +148,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         GameStrategy strategy = new TwoPlayers();
-        
+        engine.setStrategy(strategy);
         GameTable table = new GameTable();
         table.show();
         this.hide();
@@ -152,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         GameStrategy Strategy= new Random();
-        
+        engine.setStrategy(Strategy);
         GameTable table = new GameTable();
         table.show();
         this.hide();

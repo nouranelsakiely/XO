@@ -11,4 +11,10 @@ package Strategy;
  */
 public abstract class GameStrategy {
     
+    public void Player1(){
+        
+    }
+    
+    public abstract void Player2();
+    
 }

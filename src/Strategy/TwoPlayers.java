@@ -10,5 +10,10 @@ package Strategy;
  * @author noura
  */
 public class TwoPlayers extends GameStrategy {
+
+    @Override
+    public void Player2() {
+        
+    }
     
 }

@@ -11,4 +11,9 @@ package Strategy;
  */
 public class Random extends GameStrategy {
     
+    @Override
+    public void Player2() {
+        
+    }
+    
 }

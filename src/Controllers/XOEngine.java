@@ -5,13 +5,16 @@
  */
 package Controllers;
 
-import Singleton.Singleton;
+import Strategy.*;
 
 /**
  *
  * @author noura
  */
 public class XOEngine {
+    private static GameStrategy strategy = null;
+    
+    // Singleton
     private static XOEngine EngineInstance = null;
     private XOEngine() { }
     public static XOEngine getInstance() {
@@ -21,5 +24,12 @@ public class XOEngine {
         return EngineInstance;
     }
     
+    public void setStrategy(GameStrategy strategy){
+        XOEngine.strategy = strategy;
+    }
+    
+    public void Play(int place){
+        
+    }
     
 }
