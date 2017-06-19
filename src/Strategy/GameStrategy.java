@@ -5,13 +5,15 @@
  */
 package Strategy;
 
+import Views.GameTable;
+
 /**
  *
  * @author noura
  */
 public abstract class GameStrategy {
     
-    public void Player1(){
+    public void Player1(int place, GameTable table){
         
     }
     

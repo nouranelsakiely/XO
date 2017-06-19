@@ -6,12 +6,18 @@
 package Controllers;
 
 import Strategy.*;
+import Views.GameTable;
 
 /**
  *
  * @author noura
  */
 public class XOEngine {
+    enum Player{
+        Player1, Player2
+    }
+    
+    private static Player CurrentPlayer = Player.Player1;
     private static GameStrategy strategy = null;
     
     // Singleton
@@ -28,8 +34,10 @@ public class XOEngine {
         XOEngine.strategy = strategy;
     }
     
-    public void Play(int place){
-        
+    public void Play(int place, GameTable table){
+        if(CurrentPlayer == Player.Player1){
+            XOEngine.strategy.Player1(place, table);
+        }
     }
     
 }
