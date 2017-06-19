@@ -11,6 +11,15 @@ import Singleton.Singleton;
  *
  * @author noura
  */
-public class XOEngine extends Singleton {
+public class XOEngine {
+    private static XOEngine EngineInstance = null;
+    private XOEngine() { }
+    public static XOEngine getInstance() {
+        if(EngineInstance == null) {
+            EngineInstance = new XOEngine();
+        }
+        return EngineInstance;
+    }
+    
     
 }
