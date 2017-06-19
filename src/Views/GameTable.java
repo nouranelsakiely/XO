@@ -9,12 +9,12 @@ package Views;
  *
  * @author noura
  */
-public class Table extends javax.swing.JFrame {
+public class GameTable extends javax.swing.JFrame {
 
     /**
      * Creates new form Table
      */
-    public Table() {
+    public GameTable() {
         initComponents();
     }
 
