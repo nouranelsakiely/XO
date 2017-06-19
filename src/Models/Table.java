@@ -10,5 +10,5 @@ package Models;
  * @author noura
  */
 public class Table {
-    
+    String[][] Model = new String[3][3];
 }

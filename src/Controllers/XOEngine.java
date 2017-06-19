@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Models.Table;
 import Strategy.*;
 import Views.GameTable;
 
@@ -19,6 +20,7 @@ public class XOEngine {
     
     private static Player CurrentPlayer = Player.Player1;
     private static GameStrategy strategy = null;
+    private static Table Model=new Table();
     
     // Singleton
     private static XOEngine EngineInstance = null;
