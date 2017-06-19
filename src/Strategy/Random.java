@@ -5,6 +5,8 @@
  */
 package Strategy;
 
+import Views.GameTable;
+
 /**
  *
  * @author noura
@@ -12,7 +14,7 @@ package Strategy;
 public class Random extends GameStrategy {
     
     @Override
-    public void Player2() {
+    public void Player2(int place ,GameTable table) {
         
     }
     

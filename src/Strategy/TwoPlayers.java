@@ -5,15 +5,16 @@
  */
 package Strategy;
 
+import Views.GameTable;
+
 /**
  *
  * @author noura
  */
 public class TwoPlayers extends GameStrategy {
 
-    @Override
-    public void Player2() {
-        
+    public void Player2(int place ,GameTable table) {
+        table.SetPosition("O", place);
     }
     
 }

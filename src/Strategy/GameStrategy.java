@@ -14,9 +14,10 @@ import Views.GameTable;
 public abstract class GameStrategy {
     
     public void Player1(int place, GameTable table){
+        table.SetPosition( "X" , place);
         
     }
     
-    public abstract void Player2();
+    public abstract void Player2(int place ,GameTable table);
     
 }

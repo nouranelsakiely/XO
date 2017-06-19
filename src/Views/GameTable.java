@@ -20,6 +20,7 @@ public class GameTable extends javax.swing.JFrame {
      * Creates new form Table
      */
     public GameTable() {
+        engine = XOEngine.getInstance();
         initComponents();
         
     }
@@ -200,8 +201,35 @@ public class GameTable extends javax.swing.JFrame {
          engine.Play(9, this);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-
-    
+    public void SetPosition(String symbols, int position ){
+        if (position ==1){
+            jButton1.setText(symbols);
+        }
+        if (position ==2){
+            jButton2.setText(symbols);
+        }
+        if (position ==3){
+            jButton3.setText(symbols);
+        }
+            if (position ==4){
+            jButton4.setText(symbols);
+        }
+        if (position ==5){
+            jButton5.setText(symbols);
+        }
+        if (position ==6){
+            jButton6.setText(symbols);
+        }
+        if (position ==7){
+            jButton7.setText(symbols);
+        }
+        if (position ==8){
+            jButton8.setText(symbols);
+        }
+        else if (position ==9){
+            jButton9.setText(symbols);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

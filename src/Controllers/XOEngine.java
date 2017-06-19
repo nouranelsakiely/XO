@@ -37,6 +37,11 @@ public class XOEngine {
     public void Play(int place, GameTable table){
         if(CurrentPlayer == Player.Player1){
             XOEngine.strategy.Player1(place, table);
+            CurrentPlayer = Player.Player2;
+        }
+        else{
+            XOEngine.strategy.Player2(place, table);
+            CurrentPlayer =Player.Player1;
         }
     }
     
