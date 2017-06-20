@@ -39,10 +39,14 @@ public class XOEngine {
     public void Play(int place, GameTable table){
         if(CurrentPlayer == Player.Player1){
             XOEngine.strategy.Player1(place, table);
+            Model.setPosition(place, "X");
+            Model.print();
             CurrentPlayer = Player.Player2;
         }
         else{
             XOEngine.strategy.Player2(place, table);
+            Model.setPosition(place, "O");
+            Model.print();
             CurrentPlayer =Player.Player1;
         }
     }
