@@ -6,6 +6,7 @@
 package Controllers;
 
 import Models.Table;
+import Observer.GameObserver;
 import Strategy.*;
 import Views.GameTable;
 
@@ -14,13 +15,14 @@ import Views.GameTable;
  * @author noura
  */
 public class XOEngine {
-    enum Player{
+    public static enum Player{
         Player1, Player2
     }
     
     private static Player CurrentPlayer = Player.Player1;
     private static GameStrategy strategy = null;
-    private static Table Model=new Table();
+    private static GameObserver observer = new GameObserver();
+    private static Table Model = new Table();
     
     // Singleton
     private static XOEngine EngineInstance = null;
@@ -41,12 +43,18 @@ public class XOEngine {
             XOEngine.strategy.Player1(place, table);
             Model.setPosition(place, "X");
             Model.print();
+            if(observer.checkWin(Model, CurrentPlayer)){
+                table.setWinner("Player 1 Wins");
+            }
             CurrentPlayer = Player.Player2;
         }
         else{
             XOEngine.strategy.Player2(place, table);
             Model.setPosition(place, "O");
             Model.print();
+            if(observer.checkWin(Model, CurrentPlayer)){
+                table.setWinner("Player 2 Wins");
+            }
             CurrentPlayer =Player.Player1;
         }
     }

@@ -10,7 +10,7 @@ package Models;
  * @author noura
  */
 public class Table {
-    String[][] Model = new String[3][3];
+    public String[][] Model = new String[3][3];
     
     public Table(){
         for(int i = 0; i < 3; i++){
