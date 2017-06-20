@@ -46,14 +46,19 @@ public class XOEngine {
             if(observer.checkWin(Model, CurrentPlayer)){
                 table.setWinner("Player 1 Wins");
             }
+            if(observer.checkDraw(Model)){
+                table.setWinner("Draw");
+            }
             CurrentPlayer = Player.Player2;
-        }
-        else{
+        } else {
             XOEngine.strategy.Player2(place, table);
             Model.setPosition(place, "O");
             Model.print();
             if(observer.checkWin(Model, CurrentPlayer)){
                 table.setWinner("Player 2 Wins");
+            }
+            if(observer.checkDraw(Model)){
+                table.setWinner("Draw");
             }
             CurrentPlayer =Player.Player1;
         }

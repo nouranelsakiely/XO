@@ -15,6 +15,18 @@ import Models.Table;
 public class GameObserver {
     private static String symbol = null;
     
+    public boolean checkDraw(Table model){
+        String[][] table = model.Model;
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                if(" ".equals(table[i][j])){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
     public boolean checkWin(Table model, XOEngine.Player player){
         String[][] table = model.Model;
         if(player == XOEngine.Player.Player1){
