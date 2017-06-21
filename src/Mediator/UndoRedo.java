@@ -17,21 +17,21 @@ public class UndoRedo {
     private static Stack<Table> redo = new Stack();
     
     public static void Move(Table table){
-        undo.add(table);
+        undo.add(new Table(table.Model));
         redo.clear();
     }
     
     public static Table Undo(){
         if(undo.empty()) return null;
         Table table = undo.pop();
-        redo.add(table);
+        redo.add(new Table(table.Model));
         return table;
     }
     
     public static Table Redo(){
         if(redo.empty()) return null;
         Table table = redo.pop();
-        undo.add(table);
+        undo.add(new Table(table.Model));
         return table;
     }
     

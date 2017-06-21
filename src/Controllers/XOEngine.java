@@ -70,12 +70,24 @@ public class XOEngine {
         Table model = UndoRedo.Undo();
         if(model == null) return;
         table.loadMap(model.Model);
+        Model = model;
+        if(CurrentPlayer == Player.Player1){
+            CurrentPlayer = Player.Player2;
+        } else {
+            CurrentPlayer = Player.Player1;
+        }
     }
     
     public void redo(GameTable table){
         Table model = UndoRedo.Redo();
         if(model == null) return;
         table.loadMap(model.Model);
+        Model = model;
+        if(CurrentPlayer == Player.Player1){
+            CurrentPlayer = Player.Player2;
+        } else {
+            CurrentPlayer = Player.Player1;
+        }
     }
     
 }
