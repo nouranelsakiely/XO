@@ -8,8 +8,10 @@ package Controllers;
 import Mediator.UndoRedo;
 import Models.Table;
 import Observer.GameObserver;
+import SnapShot.SaveLoad;
 import Strategy.*;
 import Views.GameTable;
+import java.io.IOException;
 
 /**
  *
@@ -88,6 +90,13 @@ public class XOEngine {
             CurrentPlayer = Player.Player2;
         } else {
             CurrentPlayer = Player.Player1;
+        }
+    }
+    
+    public void save(){
+        try {
+            SaveLoad.Save(Model);
+        } catch (IOException ex) {
         }
     }
     

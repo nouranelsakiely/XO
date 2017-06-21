@@ -76,6 +76,11 @@ public class GameTable extends javax.swing.JFrame {
         });
 
         jButton12.setText("Save");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("Load");
 
@@ -292,6 +297,10 @@ public class GameTable extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         engine.redo(this);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        engine.save();
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     public void SetPosition(String symbols, int position ){
         if (position ==1){
