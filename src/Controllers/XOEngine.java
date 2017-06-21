@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Mediator.UndoRedo;
 import Models.Table;
 import Observer.GameObserver;
 import Strategy.*;
@@ -39,6 +40,7 @@ public class XOEngine {
     }
     
     public void Play(int place, GameTable table){
+        UndoRedo.Move(Model);
         if(CurrentPlayer == Player.Player1){
             XOEngine.strategy.Player1(place, table);
             Model.setPosition(place, "X");
