@@ -69,6 +69,11 @@ public class GameTable extends javax.swing.JFrame {
 
         jButton11.setText("Redo");
         jButton11.setRequestFocusEnabled(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("Save");
 
@@ -283,6 +288,10 @@ public class GameTable extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         engine.undo(this);
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        engine.redo(this);
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     public void SetPosition(String symbols, int position ){
         if (position ==1){

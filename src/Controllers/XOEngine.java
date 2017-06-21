@@ -67,7 +67,7 @@ public class XOEngine {
     }
     
     public void undo(GameTable table){
-        Table model = UndoRedo.Undo();
+        Table model = UndoRedo.Undo(Model);
         if(model == null) return;
         table.loadMap(model.Model);
         Model = model;
@@ -79,10 +79,11 @@ public class XOEngine {
     }
     
     public void redo(GameTable table){
-        Table model = UndoRedo.Redo();
+        Table model = UndoRedo.Redo(Model);
         if(model == null) return;
         table.loadMap(model.Model);
         Model = model;
+        model.print();
         if(CurrentPlayer == Player.Player1){
             CurrentPlayer = Player.Player2;
         } else {

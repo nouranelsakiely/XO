@@ -21,17 +21,17 @@ public class UndoRedo {
         redo.clear();
     }
     
-    public static Table Undo(){
+    public static Table Undo(Table currentTable){
         if(undo.empty()) return null;
         Table table = undo.pop();
-        redo.add(new Table(table.Model));
+        redo.add(new Table(currentTable.Model));
         return table;
     }
     
-    public static Table Redo(){
+    public static Table Redo(Table currentTable){
         if(redo.empty()) return null;
         Table table = redo.pop();
-        undo.add(new Table(table.Model));
+        undo.add(new Table(currentTable.Model));
         return table;
     }
     
