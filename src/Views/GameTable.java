@@ -83,6 +83,11 @@ public class GameTable extends javax.swing.JFrame {
         });
 
         jButton13.setText("Load");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -301,6 +306,10 @@ public class GameTable extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         engine.save();
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        engine.load(this);
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     public void SetPosition(String symbols, int position ){
         if (position ==1){

@@ -7,6 +7,8 @@ package SnapShot;
 
 import Models.Table;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 /**
@@ -27,6 +29,36 @@ public class SaveLoad {
         }
         fileWriter.flush();
         fileWriter.close();
+    }
+    
+    public static Table Load() throws FileNotFoundException, IOException{
+        String[][] map = new String[3][3];
+        
+        File file = new File("game.txt");
+        FileReader fileReader = new FileReader(file);
+        StringBuilder stringBuffer = new StringBuilder();
+        int numCharsRead;
+        char[] charArray = new char[1024];
+        while ((numCharsRead = fileReader.read(charArray)) > 0) {
+                stringBuffer.append(charArray, 0, numCharsRead);
+        }
+        fileReader.close();
+        System.out.println("Contents of file:");
+        System.out.println(stringBuffer.toString());
+        
+        int x = 0, y = 0;
+        for(int i = 0; i < stringBuffer.toString().length(); i++){
+            if(stringBuffer.toString().charAt(i) == '\n'){
+                y++;
+            }else{
+                map[x][y] = "" + stringBuffer.toString().charAt(i);
+                x++;
+                x%=3;
+            }
+        }
+        
+        Table table = new Table(map);
+        return table;
     }
     
 }

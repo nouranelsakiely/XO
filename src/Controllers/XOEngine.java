@@ -85,7 +85,6 @@ public class XOEngine {
         if(model == null) return;
         table.loadMap(model.Model);
         Model = model;
-        model.print();
         if(CurrentPlayer == Player.Player1){
             CurrentPlayer = Player.Player2;
         } else {
@@ -96,6 +95,15 @@ public class XOEngine {
     public void save(){
         try {
             SaveLoad.Save(Model);
+        } catch (IOException ex) {
+        }
+    }
+    
+    public void load(GameTable table){
+        try {
+            Table model = SaveLoad.Load();
+            table.loadMap(model.Model);
+            Model = model;
         } catch (IOException ex) {
         }
     }
