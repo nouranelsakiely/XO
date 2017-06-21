@@ -23,7 +23,7 @@ public class XOEngine {
     private static Player CurrentPlayer = Player.Player1;
     private static GameStrategy strategy = null;
     private static GameObserver observer = new GameObserver();
-    private static Table Model = new Table();
+    private Table Model = new Table();
     
     // Singleton
     private static XOEngine EngineInstance = null;
@@ -40,7 +40,7 @@ public class XOEngine {
     }
     
     public void Play(int place, GameTable table){
-        UndoRedo.Move(Model);
+        UndoRedo.Move(new Table(Model.Model));
         if(CurrentPlayer == Player.Player1){
             XOEngine.strategy.Player1(place, table);
             Model.setPosition(place, "X");
@@ -68,11 +68,13 @@ public class XOEngine {
     
     public void undo(GameTable table){
         Table model = UndoRedo.Undo();
+        if(model == null) return;
         table.loadMap(model.Model);
     }
     
     public void redo(GameTable table){
         Table model = UndoRedo.Redo();
+        if(model == null) return;
         table.loadMap(model.Model);
     }
     

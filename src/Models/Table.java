@@ -10,12 +10,22 @@ package Models;
  * @author noura
  */
 public class Table {
-    public String[][] Model = new String[3][3];
+    public String[][] Model;
     
     public Table(){
+        Model = new String[3][3];
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 Model[i][j] = " ";
+            }
+        }
+    }
+    
+    public Table(String[][] map){
+        Model = new String[3][3];
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                Model[i][j] = map[i][j];
             }
         }
     }
