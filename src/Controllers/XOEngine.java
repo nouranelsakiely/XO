@@ -66,4 +66,14 @@ public class XOEngine {
         }
     }
     
+    public void undo(GameTable table){
+        Table model = UndoRedo.Undo();
+        table.loadMap(model.Model);
+    }
+    
+    public void redo(GameTable table){
+        Table model = UndoRedo.Redo();
+        table.loadMap(model.Model);
+    }
+    
 }
